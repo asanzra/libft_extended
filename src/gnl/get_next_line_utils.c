@@ -110,7 +110,7 @@ int	init_list_at_end(t_gnl_list **fst_list, int fd)
 	t_gnl_list	*last_list;
 	t_gnl_list	*new_list;
 
-	new_list = malloc(sizeof(t_list));
+	new_list = malloc(sizeof(t_gnl_list));
 	if (new_list == NULLP)
 		return (NO);
 	new_list->fd = fd;
