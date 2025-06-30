@@ -6,7 +6,7 @@
 /*   By: asanz-ra <asanz-ra@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 21:46:02 by asanz-ra          #+#    #+#             */
-/*   Updated: 2025/02/04 17:21:39 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2025/06/30 15:44:32 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define LIB_EXTENDED_H
 # include <stddef.h>
 
-// Extended exports
+// Printf exports
 int		ft_printf(const char *format, ...);
 int		ft_print_color(const char *str, int optn, int newline);
 
-// Basic exports
+// Basic (libft) exports
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
