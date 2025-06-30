@@ -6,35 +6,75 @@
 /*   By: asanz-ra <asanz-ra@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:07:09 by asanz-ra          #+#    #+#             */
-/*   Updated: 2025/02/04 18:29:47 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2025/06/30 17:06:00 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../lib_extended.h"
+#include "lib_extended.h"
+#include "ft_printf.h"
 
-//Prints the passed str in the optn color, followed by a newline if newline==1.
-//optn can be:
-//1 - Light Red
-//2 - Light Green
-//Other - no color
-int	ft_print_color(const char *str, int optn, int newline)
+int	start_color(int color)
 {
-	int		count;
-	char	*light_red;
-	char	*light_green;
+	char	*color_str;
+
+	if (color == 1)
+		color_str = "\e[91m";
+	else if (color == 2)
+		color_str = "\e[92m";
+	else if (color == 3)
+		color_str = "\e[93m";
+	else if (color == 4)
+		color_str = "\e[94m";
+	else if (color == 5)
+		color_str = "\e[95m";
+	else if (color == 6)
+		color_str = "\e[96m";
+	else if (color == 7)
+		color_str = "\e[97m";
+	else
+		color_str = "";
+	return (ft_printf(color_str));
+}
+
+int	end_color(void)
+{
 	char	*remove_colour;
 
-	light_red = "\e[91m";
-	light_green = "\e[92m";
 	remove_colour = "\e[0m";
-	count = 0;
-	if (optn == 1)
-		count += ft_printf(light_red);
-	if (optn == 2)
-		count += ft_printf(light_green);
-	count += ft_printf(str);
-	count += ft_printf(remove_colour);
-	if (newline == 1)
-		count += ft_printf("\n");
-	return (count);
+	return (ft_printf(remove_colour));
+}
+
+//Prints the passed str in the selected color.
+//color can be:
+// 1	Red
+// 2	Green
+// 3	Yellow
+// 4	Blue
+// 5	Purple
+// 6	Cyan
+// 7	White
+//Other - no color
+int	ft_printf_color(int color, const char *format, ...)
+{
+	size_t	main_iterator;
+	int		printed_chars;
+	va_list	arguments;
+
+	main_iterator = 0;
+	printed_chars = start_color(color);
+	va_start(arguments, format);
+	while ('\0' != format[main_iterator])
+	{
+		if (format[main_iterator] != '%')
+			print_char_no_conversion(format, &main_iterator, &printed_chars);
+		else if (format_parser(format, &main_iterator, &printed_chars,
+				arguments) < 0)
+		{
+			end_color();
+			return (-1);
+		}
+	}
+	va_end(arguments);
+	printed_chars += end_color();
+	return (printed_chars);
 }

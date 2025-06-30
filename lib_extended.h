@@ -6,7 +6,7 @@
 /*   By: asanz-ra <asanz-ra@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 21:46:02 by asanz-ra          #+#    #+#             */
-/*   Updated: 2025/06/30 16:13:11 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2025/06/30 17:03:44 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*get_next_line(int fd);
 
 // Printf exports
 int		ft_printf(const char *format, ...);
-int		ft_print_color(const char *str, int optn, int newline);
+int		ft_printf_color(int color, const char *format, ...);
 
 // Basic (libft) exports
 int		ft_isalpha(int c);

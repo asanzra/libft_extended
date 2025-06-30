@@ -6,18 +6,11 @@
 /*   By: asanz-ra <asanz-ra@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 19:15:06 by asanz-ra          #+#    #+#             */
-/*   Updated: 2024/12/12 21:24:49 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2025/06/30 17:02:47 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int		format_parser(const char *format, size_t *format_index,
-			int *printed_chars, va_list arguments);
-int		conversion_map_redirect(char *flags,
-			int *fw_precision, int *printed_chars, va_list args);
-void	print_char_no_conversion(const char *format,
-			size_t *main_iterator, int *printed_chars);
 
 //Upon successful return, these functions return the number 
 //of characters printed 

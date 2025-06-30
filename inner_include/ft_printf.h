@@ -6,7 +6,7 @@
 /*   By: asanz-ra <asanz-ra@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 17:52:51 by asanz-ra          #+#    #+#             */
-/*   Updated: 2025/06/30 15:44:06 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2025/06/30 17:03:11 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,12 @@ int		remove_starting_hex_special(char **str, char *flags_len_m_conv);
 int		add_starting_hex_special(char **new_str, char flag_is_neg_hex,
 			size_t dstsize);
 void	add_positive_sign_for_d_i(char *prefix, char **int_str);
+//Basic printf and printf_color
+int		format_parser(const char *format, size_t *format_index,
+			int *printed_chars, va_list arguments);
+int		conversion_map_redirect(char *flags,
+			int *fw_precision, int *printed_chars, va_list args);
+void	print_char_no_conversion(const char *format,
+			size_t *main_iterator, int *printed_chars);
 
 #endif
