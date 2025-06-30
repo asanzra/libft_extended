@@ -6,7 +6,7 @@
 #    By: asanz-ra <asanz-ra@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 20:14:43 by asanz-ra          #+#    #+#              #
-#    Updated: 2025/06/30 15:45:22 by asanz-ra         ###   ########.fr        #
+#    Updated: 2025/06/30 16:15:16 by asanz-ra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ SRC_ROOT = ./src
 
 # Source file sub-dirs, can be expanded
 SRC_DIRS = $(SRC_ROOT)/libft \
-           $(SRC_ROOT)/printf
+           $(SRC_ROOT)/printf \
+		   $(SRC_ROOT)/gnl
 
 # Include directories (add more as needed)
 INCLUDE_ROOT = ./inner_include

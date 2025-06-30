@@ -6,13 +6,16 @@
 /*   By: asanz-ra <asanz-ra@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 21:46:02 by asanz-ra          #+#    #+#             */
-/*   Updated: 2025/06/30 15:44:32 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2025/06/30 16:13:11 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIB_EXTENDED_H
 # define LIB_EXTENDED_H
 # include <stddef.h>
+
+//Get next line export
+char	*get_next_line(int fd);
 
 // Printf exports
 int		ft_printf(const char *format, ...);
